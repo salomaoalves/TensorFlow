@@ -23,7 +23,7 @@ class RLS:
     def train(self, x, y):
         with tf.Session() as sess: #start the train
             sess.run(self.init)
-            for _ in range(1000000):
+            for _ in range(1000):
                 indices = np.random.randint(len(X), size = self.batch_size)
                 feed = {self.xph: X[indices], self.yph: y[indices]}
                 sess.run(self.training, feed_dict = feed) 
